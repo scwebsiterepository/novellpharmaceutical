@@ -130,7 +130,7 @@ class ProductController extends Controller
         $imageName = time() . '.' . $request->image->extension();
 
         // simpan file ke folder public/product
-        Storage::putFileAs('public/product', $request->image, $imageName);
+        // Storage::putFileAs('public/product', $request->image, $imageName);
 
         $product = Product::create([
             'category_id' => $request->category,
@@ -140,6 +140,12 @@ class ProductController extends Controller
             'price' => $request->price,
             'brands' => $request->brand,
         ]);
+
+        if($request->hasFile('image')) {
+            $request->file('image')->move('gambarproduk/',$request->file('image')->getClientOriginalName());
+            $product->image = $request->file('image')->getClientOriginalName();
+            $product->save();
+        }
 
         return redirect()->route('product.index');
     }

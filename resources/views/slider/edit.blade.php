@@ -22,19 +22,9 @@
                             <input type="text" class="form-control" id="caption" value="{{ $slider->caption }}" name="caption" required>
                         </div>
 
-                        <div class="mb-3">
+                        <!-- <div class="mb-3">
                             <label for="image" class="form-label">Gambar Slider</label>
                             <input class="form-control" type="file" name="image" id="image" accept=".jpg, .jpeg, .png., .webp">
-                        </div>
-                        
-                        <!-- <div class="mb-3">
-                            <label for="brand" class="form-label">Status</label>
-                            <select class="form-select" aria-label="status" id="status" name="status">
-                                <option selected disabled>- Pilih Status -</option>    
-                                <option value="Diterima">Terima</option>
-                                <option value="Ditolak">Tolak</option>
-                                <option value="Menunggu">Menunggu</option>
-                            </select>
                         </div> -->
                         
                         <button type="submit" class="btn btn-primary">Kirim</button>

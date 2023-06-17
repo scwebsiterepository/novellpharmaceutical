@@ -26,7 +26,7 @@
                         <div class="card h-100">
 
                             <!-- Product image-->
-                            <img class="card-img-top" src="{{ asset('storage/product/' . $product->image) }}" alt="{{ $product->name }}" />
+                            <img class="card-img-top" src="{{ asset('gambarproduk/' . $product->image) }}" alt="{{ $product->name }}" />
 
                             <!-- Product details-->
                             <div class="card-body p-4">

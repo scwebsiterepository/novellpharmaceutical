@@ -31,7 +31,7 @@
                                         @if ($product->image == null)
                                             <span class="badge bg-secondary">Tidak Tersedia</span>
                                         @else
-                                            <img src="{{ asset('storage/product/' . $product->image) }}" alt="{{ $product->name }}" style="max-width: 50px">
+                                            <img src="{{ asset('gambarproduk/' . $product->image) }}" alt="{{ $product->name }}" style="max-width: 50px">
                                         @endif
                                     </td>
                                     <td>{{ $product->name }}</td>

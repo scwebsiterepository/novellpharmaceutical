@@ -33,6 +33,13 @@ class SliderController extends Controller
             'status' => $request->status,
         ]);
 
+        //upload file ke public
+        if($request->hasFile('image')) {
+            $request->file('image')->move('gambarslider/',$request->file('image')->getClientOriginalName());
+            $slider->image = $request->file('image')->getClientOriginalName();
+            $slider->save();
+        }
+
         // pindah halaman ke halaman slider.index
         return redirect()->route('slider.index');
     }
@@ -61,21 +68,19 @@ class SliderController extends Controller
             $old_image = Slider::find($id)->image;
 
             // hapus file gambar lama dari folder slider
-            Storage::delete('public/slider/'.$old_image);
+            // Storage::delete('gambarslider'.$old_image);
 
             // FILE BARU
             // ubah nama file gambar baru dengan angka random
             $imageName = time().'.'.$request->image->extension();
 
             // upload file gambar ke folder slider
-            Storage::putFileAs('public/slider', $request->file('image'), $imageName);
+            // Storage::putFileAs('public/slider', $request->file('image'), $imageName);
 
             // update data sliders
             Slider::where('id', $id)->update([
                 'title' => $request->title,
                 'caption' => $request->caption,
-                'image' => $imageName,
-                'status' => $request->status,
             ]);
 
         } else {

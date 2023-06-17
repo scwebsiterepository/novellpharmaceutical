@@ -27,7 +27,7 @@
                                     <td>{{ $slider->title }}</td>
                                     <td>{{ $slider->caption }}</td>
                                     <td>
-                                        <img src="{{ asset('storage/slider/' . $slider->image) }}" class="img-fluid" style="max-width: 100px;"
+                                        <img src="{{ asset('gambarslider/' . $slider->image) }}" class="img-fluid" style="max-width: 100px;"
                                             alt="{{ $slider->image }}">
                                     </td>
                                     <td>{{ $slider->status }}</td>

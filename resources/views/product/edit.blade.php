@@ -34,10 +34,12 @@
                             <label for="price" class="form-label">Harga</label>
                             <input type="text" class="form-control" id="price" value="{{ $product->price }}" name="price" required>
                         </div>
+
                         <!-- <div class="mb-3">
                             <label for="sale-price" class="form-label">Sale Price</label>
                             <input type="text" class="form-control" id="sale-price" value="{{ $product->sale_price }}" name="sale_price" required>
                         </div> -->
+
                         <div class="mb-3">
                             <label for="brand" class="form-label">Brand</label>
                             <select class="form-select" aria-label="brand" id="brand" name="brand">
@@ -48,10 +50,10 @@
                             </select>
                         </div>
 
-                        <div class="mb-3">
+                        <!-- <div class="mb-3">
                             <label for="image" class="form-label">Gambar Produk</label>
                             <input class="form-control" type="file" name="image" id="image" accept=".jpg, .jpeg, .png., .webp">
-                        </div>
+                        </div> -->
 
                         <button type="submit" class="btn btn-primary">Kirim</button>
                         <a href="{{route('product.index')}}"> <button type="button" class="btn btn-secondary" >Batal</button> </a>
